@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+        <ul class="nav nav-tabs">
+                <li id="nana"  role="presentation" class="active"><a href=" {% url 'main' %} ">Main</a></li>
+                <li id="nana"  role="presentation"><a href="{% url 'about' %}">Who am I?</a></li>
+                <li id="nana"  role="presentation"><a href="{% url 'service' %}">Service</a></li>
+              </ul>
+{% load static %}
+<hr>
+<!--<img src={% static 'img/lion.jpg' %} widht=100px height=100px>-->
+<img src= {% static 'img/lion2.jpg' %} widht=250px height=250px style="margin-left: auto; margin-right: auto; display: block;"/>
+<hr>
+<h1><a href=" {% url 'about' %} ">자기소개</a></h1>
+
+    {% block content %}
+    {% endblock %} 
+    <h1><a href="{% url 'service' %}">아기사자가 만들고 싶은 서비스</a></h1>
+    <img src= {% static 'img/lion.jpg' %} widht=250px height=250px style="margin-left: auto; margin-right: auto; display: block;"/>
+   
+        
+    <p id="mymy">멋쟁이사자가 되는 그날까지....<span class="glyphicon glyphicon-star-empty"></span></p>
+
+</body>
+</html>
