@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,3 +127,8 @@ STATICFILES_DIRS=(
     os.path.join(BASE_DIR,'static'), 
 ) 
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+
+#장고와 헤로쿠의 데이터베이스가 달라서 둘을 맞춰주는 것
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
